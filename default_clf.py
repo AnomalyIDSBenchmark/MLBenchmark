@@ -85,6 +85,9 @@ class DefaultNSL(object):
     def test_clf(self, train=False):
         pass
 
+    def predict(self, row):
+        return clf.predict(row)
+
     def evaluate_results(self, ans=None, train=False):
         if not ans:
             ans = self.test_clf(train)
