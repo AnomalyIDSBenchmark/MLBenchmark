@@ -86,7 +86,7 @@ class DefaultNSL(object):
         pass
 
     def predict(self, row):
-        return clf.predict(row)
+        return self.clf.predict(row)
 
     def evaluate_results(self, ans=None, train=False):
         if not ans:
