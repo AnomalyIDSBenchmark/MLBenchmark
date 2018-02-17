@@ -93,3 +93,10 @@ class DefaultNSL(object):
             ans = self.test_clf(train)
         print("Accuracy on data: {0:1%}".format(ans[1]))
         return ans
+
+    def shuffle_training_data(self):
+        data = pd.concat(self.training, axis=1)
+        data = data.sample(frac=1).reset_index(drop=True)
+        labels = data['labels']
+        del data['labels']
+        self.training = [data, labels]
